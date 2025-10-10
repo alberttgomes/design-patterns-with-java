@@ -1,4 +1,7 @@
 package com.streaming.dp.observer.model;
 
-public class Miniseries {
+/**
+ * @author Albert Gomes Cabral
+ */
+public class Miniseries extends BaseContent {
 }

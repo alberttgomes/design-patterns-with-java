@@ -1,63 +1,72 @@
 package com.streaming.dp.observer.model;
 
+import com.streaming.dp.observer.enums.Category;
+
 import java.util.Date;
-import java.util.Map;
 
 /**
  * @author Albert Gomes Cabral
  */
-public abstract class BaseContent {
+public abstract class BaseContent implements Content {
 
-    protected abstract Map<String, Object> attributes() throws RuntimeException;
+    public Category getCategory() {
+        return _category;
+    }
 
     public String getDescription() {
-        return description;
+        return _description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public int getDuration() {
+        return _duration;
     }
 
-    public long getDuration() {
-        return duration;
-    }
-
-    public void setDuration(long duration) {
-        this.duration = duration;
-    }
-
-    public Date getLunchDate() {
-        return lunchDate;
-    }
-
-    public void setLunchDate(Date lunchDate) {
-        this.lunchDate = lunchDate;
+    public Date getLaunchDate() {
+        return _launchDate;
     }
 
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return _name;
     }
 
     public long getPrimKey() {
-        return primKey;
+        return _primKey;
+    }
+
+    public void setCategory(Category category) {
+        _category = category;
+    }
+
+    public void setDescription(String description) {
+        this._description = description;
+    }
+
+    public void setDuration(int duration) {
+        this._duration = duration;
+    }
+
+    public void setLaunchDate(Date launchDate) {
+        this._launchDate = launchDate;
+    }
+
+    public void setName(String name) {
+        this._name = name;
     }
 
     public void setPrimKey(long primKey) {
-        this.primKey = primKey;
+        this._primKey = primKey;
     }
 
-    private String description;
+    private Category _category;
 
-    private long duration;
+    private String _description;
 
-    private Date lunchDate;
+    private int _duration;
 
-    private String name;
+    private Date _launchDate;
 
-    private long primKey;
+    private String _name;
+
+    private long _primKey;
 
 }
