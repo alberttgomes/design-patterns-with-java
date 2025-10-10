@@ -1,17 +1,75 @@
 package com.streaming.dp.observer.service;
 
+import com.streaming.dp.builder.ContentBuilder;
 import com.streaming.dp.observer.api.StreamingLocalService;
+import com.streaming.dp.observer.enums.Category;
+import com.streaming.dp.observer.model.Content;
 import com.streaming.dp.observer.model.StreamingUser;
+
+import java.security.InvalidParameterException;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author Albert Gomes Cabral
  */
 public class StreamingLocalServiceImpl implements StreamingLocalService {
+
+    @Override
+    public Content createMovieContent(
+            String authored, Map<Integer, String> awards,
+            Map<String, Object> attributes, Category category, String description,
+            int duration, Date launchDate, String name, long primKey)
+        throws RuntimeException {
+
+
+        return null;
+    }
+
+    @Override
+    public Content createSeriesContent(
+            int chapters, Map<String, Object> attributes, Category category,
+            String description, int duration, Date launchDate, String name,
+            long primKey, int sessionNumber)
+        throws RuntimeException {
+
+        try {
+            _validateSeriesContent(
+                category, chapters, description, duration, name,
+                sessionNumber);
+
+            return new ContentBuilder(
+                ).setAttributes(
+                    attributes
+                ).setCategory(
+                    category
+                ).setChapters(
+                    chapters
+                ).setDescription(
+                    description
+                ).setDuration(
+                    duration
+                ).setLaunchDate(
+                    launchDate
+                ).setName(
+                    name
+                ).setPrimKey(
+                    primKey
+                ).setSessionNumber(
+                    sessionNumber
+                ).setType(
+                    "series"
+                ).build();
+        }
+        catch (InvalidParameterException invalidParameterException) {
+            throw new RuntimeException(invalidParameterException);
+        }
+
+    }
 
     @Override
     public StreamingUser createStreamingUser(
@@ -70,6 +128,29 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
                 value.notifyObservers(Runnable::run, map);
             }
         }
+    }
+
+    private void _validateSeriesContent(
+            Category category, int chapter, String description, int duration,
+            String name, int sessionNumber)
+        throws InvalidParameterException {
+
+        if (chapter <= 0 || sessionNumber <= 0 || duration <= 0) {
+            throw new InvalidParameterException(
+                ("Invalid parameters for chapter or session number" +
+                        " %s %s ").formatted(chapter, sessionNumber));
+        }
+
+        if (category == null) {
+            throw new InvalidParameterException(
+                "Invalid category parameter");
+        }
+
+        if (Objects.isNull(description) || Objects.isNull(name)) {
+            throw new InvalidParameterException(
+                "Invalid description or name parameters");
+        }
+
     }
 
     private final Map<String, StreamingUser> _streamingUsersMap =
