@@ -16,56 +16,56 @@ public class StreamingUser implements UserObserver {
         return _email;
     }
 
-    public void setEmail(String email) {
-        _email = email;
+    public List<Notification> getNotifications() {
+        return _notifications;
     }
 
     public String getPassword() {
         return _password;
     }
 
-    public void setPassword(String password) {
-        _password = password;
-    }
-
     public String getPhoneNumber() {
         return _phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        _phoneNumber = phoneNumber;
     }
 
     public List<String> getPreferences() {
         return _preferences;
     }
 
-    public void setPreferences(List<String> preferences) {
-        _preferences = preferences;
-    }
-
-    public List<Notification> getNotifications() {
-        return _notifications;
-    }
-
     public String getSubscription() {
         return _subscription;
-    }
-
-    public void setSubscription(String subscription) {
-        _subscription = subscription;
     }
 
     public String getStatus() {
         return _status;
     }
 
-    public void setStatus(String status) {
-        _status = status;
-    }
-
     public String getUserName() {
         return _userName;
+    }
+
+    public void setEmail(String email) {
+        _email = email;
+    }
+
+    public void setPassword(String password) {
+        _password = password;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        _phoneNumber = phoneNumber;
+    }
+
+    public void setPreferences(List<String> preferences) {
+        _preferences = preferences;
+    }
+
+    public void setSubscription(String subscription) {
+        _subscription = subscription;
+    }
+
+    public void setStatus(String status) {
+        _status = status;
     }
 
     public void setUserName(String userName) {
@@ -78,25 +78,31 @@ public class StreamingUser implements UserObserver {
         throws RuntimeException {
 
         consumer.accept(() -> {
-            for (Map.Entry<String, String> entry : subject.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
+            String key = subject.get("category");
+            String value = subject.get("description");
 
-                _notifications.add(new Notification(key, value));
+            _notifications.add(new Notification(key, value));
 
-               System.out.println(
-                   "Notification sent successfully to user: " + _userName);
-            }
+            System.out.println(
+               "Notification sent successfully to user: " + _userName);
+
         });
     }
 
     private String _email;
+
     private String _password;
+
     private String _phoneNumber;
+
     private String _subscription;
+
     private String _status;
+
     private String _userName;
+
     private List<String> _preferences = new ArrayList<>();
+
     private final List<Notification> _notifications = new ArrayList<>();
 
 }
