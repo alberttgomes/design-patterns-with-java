@@ -3,7 +3,7 @@ package com.streaming.dp.observer.enums;
 /**
  * @author Albert Gomes Cabral
  */
-public enum SeriesCategory {
+public enum Category {
 
     ANIMATION,
     COMEDY,
