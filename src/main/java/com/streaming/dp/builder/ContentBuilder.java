@@ -1,11 +1,11 @@
 package com.streaming.dp.builder;
 
 import com.streaming.dp.factory.ContentFactory;
-import com.streaming.dp.observer.enums.Category;
-import com.streaming.dp.observer.model.BaseContent;
-import com.streaming.dp.observer.model.Content;
-import com.streaming.dp.observer.model.Movie;
-import com.streaming.dp.observer.model.Series;
+import com.streaming.dp.enums.Category;
+import com.streaming.dp.model.BaseContent;
+import com.streaming.dp.model.Content;
+import com.streaming.dp.model.Movie;
+import com.streaming.dp.model.Series;
 
 import java.util.Date;
 import java.util.Map;

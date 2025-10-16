@@ -1,13 +1,13 @@
 package com.streaming.test;
 
 import com.streaming.dp.builder.ContentBuilder;
-import com.streaming.dp.observer.api.StreamingLocalService;
-import com.streaming.dp.observer.enums.Category;
-import com.streaming.dp.observer.enums.Status;
-import com.streaming.dp.observer.model.Content;
-import com.streaming.dp.observer.model.Series;
-import com.streaming.dp.observer.model.StreamingUser;
-import com.streaming.dp.observer.service.StreamingLocalServiceImpl;
+import com.streaming.dp.api.StreamingLocalService;
+import com.streaming.dp.enums.Category;
+import com.streaming.dp.enums.Status;
+import com.streaming.dp.model.Content;
+import com.streaming.dp.model.Series;
+import com.streaming.dp.model.StreamingUser;
+import com.streaming.dp.service.StreamingLocalServiceImpl;
 
 import java.util.Date;
 import java.util.HashMap;

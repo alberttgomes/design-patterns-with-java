@@ -1,8 +1,8 @@
-package com.streaming.dp.observer.api;
+package com.streaming.dp.api;
 
-import com.streaming.dp.observer.enums.Category;
-import com.streaming.dp.observer.model.Content;
-import com.streaming.dp.observer.model.StreamingUser;
+import com.streaming.dp.enums.Category;
+import com.streaming.dp.model.Content;
+import com.streaming.dp.model.StreamingUser;
 
 import java.util.Date;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.streaming.dp.observer.model;
+package com.streaming.dp.model;
 
-import com.streaming.dp.observer.enums.Category;
+import com.streaming.dp.enums.Category;
 
 import java.util.Date;
 

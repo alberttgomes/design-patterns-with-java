@@ -1,10 +1,10 @@
-package com.streaming.dp.observer.service;
+package com.streaming.dp.service;
 
 import com.streaming.dp.builder.ContentBuilder;
-import com.streaming.dp.observer.api.StreamingLocalService;
-import com.streaming.dp.observer.enums.Category;
-import com.streaming.dp.observer.model.Content;
-import com.streaming.dp.observer.model.StreamingUser;
+import com.streaming.dp.api.StreamingLocalService;
+import com.streaming.dp.enums.Category;
+import com.streaming.dp.model.Content;
+import com.streaming.dp.model.StreamingUser;
 
 import java.security.InvalidParameterException;
 import java.util.Date;

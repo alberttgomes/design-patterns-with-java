@@ -1,4 +1,4 @@
-package com.streaming.dp.observer.enums;
+package com.streaming.dp.enums;
 
 /**
  * @author Albert Gomes Cabral

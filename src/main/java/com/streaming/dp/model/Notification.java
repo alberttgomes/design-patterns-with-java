@@ -1,4 +1,4 @@
-package com.streaming.dp.observer.model;
+package com.streaming.dp.model;
 
 /**
  * @author Albert Gomes Cabral

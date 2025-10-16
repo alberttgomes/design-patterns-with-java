@@ -1,6 +1,6 @@
-package com.streaming.dp.observer.model;
+package com.streaming.dp.model;
 
-import com.streaming.dp.observer.util.UserObserver;
+import com.streaming.dp.util.UserObserver;
 
 import java.util.ArrayList;
 import java.util.List;

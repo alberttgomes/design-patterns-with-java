@@ -1,4 +1,4 @@
-package com.streaming.dp.observer.util;
+package com.streaming.dp.util;
 
 import java.util.Map;
 import java.util.function.Consumer;

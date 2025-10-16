@@ -1,9 +1,9 @@
 package com.streaming.dp.factory;
 
-import com.streaming.dp.observer.model.Content;
-import com.streaming.dp.observer.model.Miniseries;
-import com.streaming.dp.observer.model.Movie;
-import com.streaming.dp.observer.model.Series;
+import com.streaming.dp.model.Content;
+import com.streaming.dp.model.Miniseries;
+import com.streaming.dp.model.Movie;
+import com.streaming.dp.model.Series;
 
 import java.util.HashMap;
 import java.util.Map;
