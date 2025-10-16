@@ -7,7 +7,6 @@ import com.streaming.dp.observer.model.Content;
 import com.streaming.dp.observer.model.StreamingUser;
 
 import java.security.InvalidParameterException;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -26,8 +25,31 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
             int duration, Date launchDate, String name, long primKey)
         throws RuntimeException {
 
+        _validateSeriesContent(
+            category, 1, description, duration, name, 1);
 
-        return null;
+        return new ContentBuilder(
+            ).setAuthored(
+                authored
+            ).setAttributes(
+                attributes
+            ).setAwards(
+                awards
+            ).setCategory(
+                category
+            ).setDescription(
+                description
+            ).setDuration(
+                duration
+            ).setLaunchDate(
+                launchDate
+            ).setName(
+                name
+            ).setPrimKey(
+                primKey
+            ).setType(
+                "movie"
+            ).build();
     }
 
     @Override

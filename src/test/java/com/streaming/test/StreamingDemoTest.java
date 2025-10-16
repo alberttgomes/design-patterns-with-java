@@ -104,6 +104,14 @@ public class StreamingDemoTest {
         Assertions.assertInstanceOf(Series.class, content, "test passed");
     }
 
+    private StreamingUser _createStreamingUser(
+        String email, String number, String password, String subscription,
+        String userName, String status) {
+
+        return _streamingLocalService.createStreamingUser(
+            email, number, userName, subscription, status, password);
+    }
+
     private final StreamingLocalService _streamingLocalService =
         new StreamingLocalServiceImpl();
 

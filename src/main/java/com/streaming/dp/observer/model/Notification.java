@@ -7,6 +7,4 @@ package com.streaming.dp.observer.model;
  */
 public record Notification(String key, String value) {
 
-    public void notifyObservers() {}
-
 }

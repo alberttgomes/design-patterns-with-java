@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public interface Content {
 
-    void setCategory(Category category);
+    Category getCategory();
 
     String getDescription();
 
@@ -20,6 +20,8 @@ public interface Content {
     String getName();
 
     long getPrimKey();
+
+    void setCategory(Category category);
 
     void setDescription(String description);
 

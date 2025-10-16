@@ -14,13 +14,13 @@ import java.util.function.Supplier;
  */
 public class ContentFactory {
 
-    public static void register(String type, Supplier<Content> supplier) {
-        _CONTENT_KIND_REGISTRY.put(type.toLowerCase(), supplier);
-    }
-
     public static Content create(String type) {
         return _CONTENT_KIND_REGISTRY.getOrDefault(
             type.toLowerCase(), Movie::new).get();
+    }
+
+    public static void register(String type, Supplier<Content> supplier) {
+        _CONTENT_KIND_REGISTRY.put(type.toLowerCase(), supplier);
     }
 
     private static final Map<String, Supplier<Content>> _CONTENT_KIND_REGISTRY =
