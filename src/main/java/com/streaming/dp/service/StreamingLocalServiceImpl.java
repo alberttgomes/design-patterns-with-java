@@ -25,8 +25,9 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
             int duration, Date launchDate, String name, long primKey)
         throws RuntimeException {
 
-        _validateSeriesContent(
-            category, 1, description, duration, name, 1);
+        _validateContent(
+            category, _DEFAULT_CHAPTER_NUMBER, description,
+            duration, name, _DEFAULT_SESSION_NUMBER);
 
         return new ContentBuilder(
             ).setAuthored(
@@ -60,7 +61,7 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
         throws RuntimeException {
 
         try {
-            _validateSeriesContent(
+            _validateContent(
                 category, chapters, description, duration, name,
                 sessionNumber);
 
@@ -152,7 +153,7 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
         }
     }
 
-    private void _validateSeriesContent(
+    private void _validateContent(
             Category category, int chapter, String description, int duration,
             String name, int sessionNumber)
         throws InvalidParameterException {
@@ -177,5 +178,10 @@ public class StreamingLocalServiceImpl implements StreamingLocalService {
 
     private final Map<String, StreamingUser> _streamingUsersMap =
         new HashMap<>();
+
+    private static final int _DEFAULT_CHAPTER_NUMBER = 1;
+
+    private static final int _DEFAULT_SESSION_NUMBER =
+        _DEFAULT_CHAPTER_NUMBER;
 
 }
